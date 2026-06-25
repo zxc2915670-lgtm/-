@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>米福壽司專門店｜草屯壽司推薦</title>
+<title>米福壽司專門店｜草屯人氣壽司</title>
 
 <style>
 
@@ -16,180 +16,132 @@ box-sizing:border-box;
 
 body{
 font-family:"Microsoft JhengHei",sans-serif;
-background:#111;
-color:#fff;
-line-height:1.8;
+background:#f8f5ef;
+color:#333;
 }
 
 .hero{
 height:100vh;
-background:url('米福桌面.jpg');
+background:
+linear-gradient(rgba(0,0,0,.55),
+rgba(0,0,0,.55)),
+url('米福桌面.jpg');
 background-size:cover;
 background-position:center;
-position:relative;
 display:flex;
-align-items:center;
 justify-content:center;
-}
-
-.hero::before{
-content:"";
-position:absolute;
-width:100%;
-height:100%;
-background:rgba(0,0,0,.55);
-}
-
-.hero-content{
-position:relative;
+align-items:center;
 text-align:center;
-z-index:2;
+color:white;
 }
 
 .hero h1{
-font-size:4rem;
-margin-bottom:15px;
+font-size:70px;
+margin-bottom:20px;
 }
 
 .hero p{
-font-size:1.3rem;
-margin-bottom:30px;
-color:#ddd;
+font-size:28px;
+margin-bottom:40px;
+}
+
+.btns{
+display:flex;
+gap:15px;
+justify-content:center;
+flex-wrap:wrap;
 }
 
 .btn{
-display:inline-block;
-padding:14px 28px;
-margin:10px;
+padding:15px 30px;
 border-radius:50px;
 text-decoration:none;
 font-weight:bold;
-transition:.3s;
-}
-
-.btn:hover{
-transform:translateY(-3px);
+color:white;
+font-size:18px;
 }
 
 .line{
 background:#06C755;
-color:#fff;
 }
 
-.food{
+.panda{
 background:#ff2b85;
-color:#fff;
 }
 
 .map{
 background:#d4af37;
-color:#111;
+color:black;
 }
 
 .section{
-padding:80px 10%;
+max-width:1200px;
+margin:auto;
+padding:80px 20px;
 }
 
 .title{
 text-align:center;
-font-size:2rem;
-margin-bottom:40px;
-color:#d4af37;
-}
-
-.cards{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:20px;
-}
-
-.card{
-background:#1e1e1e;
-padding:25px;
-border-radius:15px;
-text-align:center;
-}
-
-.card h3{
-margin-bottom:10px;
-color:#d4af37;
+font-size:40px;
+margin-bottom:50px;
 }
 
 .delivery{
-max-width:700px;
-margin:auto;
+background:white;
+border-radius:20px;
+padding:40px;
+box-shadow:0 5px 20px rgba(0,0,0,.1);
 }
 
-.delivery table{
+.delivery ul{
+line-height:2.2;
+font-size:22px;
+}
+
+.menu{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(350px,1fr));
+gap:30px;
+}
+
+.menu img{
 width:100%;
-border-collapse:collapse;
-}
-
-.delivery th,
-.delivery td{
-padding:15px;
-border:1px solid #333;
-text-align:center;
-}
-
-.delivery th{
-background:#d4af37;
-color:#111;
-}
-
-.contact{
-text-align:center;
-}
-
-.contact p{
-margin:10px 0;
-}
-
-.float-btn{
-position:fixed;
-right:20px;
-z-index:999;
-padding:15px 20px;
-border-radius:50px;
-font-weight:bold;
-text-decoration:none;
-color:#fff;
-box-shadow:0 5px 15px rgba(0,0,0,.3);
-}
-
-.line-float{
-background:#06C755;
-bottom:90px;
-}
-
-.food-float{
-background:#ff2b85;
-bottom:20px;
+border-radius:20px;
+box-shadow:0 5px 20px rgba(0,0,0,.15);
 }
 
 footer{
+background:#111;
+color:white;
 text-align:center;
-padding:30px;
-background:#000;
-color:#aaa;
+padding:50px 20px;
 }
 
-@media(max-width:768px){
-
-.hero h1{
-font-size:2.2rem;
+.float{
+position:fixed;
+right:20px;
+bottom:20px;
+display:flex;
+flex-direction:column;
+gap:10px;
+z-index:999;
 }
 
-.hero p{
-font-size:1rem;
+.float a{
+padding:15px 25px;
+border-radius:50px;
+text-decoration:none;
+color:white;
+font-weight:bold;
+text-align:center;
 }
 
-.btn{
-display:block;
-margin:10px auto;
-width:220px;
+.float-line{
+background:#06C755;
 }
 
+.float-panda{
+background:#ff2b85;
 }
 
 </style>
@@ -199,11 +151,13 @@ width:220px;
 
 <section class="hero">
 
-<div class="hero-content">
+<div>
 
 <h1>米福壽司專門店</h1>
 
 <p>每一口都是幸福</p>
+
+<div class="btns">
 
 <a class="btn line"
 href="https://lin.ee/JXSBwrM"
@@ -211,7 +165,7 @@ target="_blank">
 LINE立即點餐
 </a>
 
-<a class="btn food"
+<a class="btn panda"
 href="https://foodpanda.go.link/5HXWc"
 target="_blank">
 Foodpanda外送
@@ -225,86 +179,97 @@ Google導航
 
 </div>
 
-</section>
-
-<section class="section">
-
-<h2 class="title">人氣推薦</h2>
-
-<div class="cards">
-
-<div class="card">
-<h3>炙燒鮭魚肚</h3>
-人氣必點
-</div>
-
-<div class="card">
-<h3>生鮭魚</h3>
-新鮮現切
-</div>
-
-<div class="card">
-<h3>明太子蝦</h3>
-炙燒香氣十足
-</div>
-
 </div>
 
 </section>
 
 <section class="section">
 
-<h2 class="title">外送服務</h2>
+<h2 class="title">
+外送服務
+</h2>
 
 <div class="delivery">
 
-<table>
+<ul>
 
-<tr>
-<th>距離</th>
-<th>最低消費</th>
-</tr>
+<li>0－1公里：滿200元</li>
 
-<tr><td>0-1公里</td><td>200元</td></tr>
-<tr><td>2-3公里</td><td>300元</td></tr>
-<tr><td>3-4公里</td><td>450元</td></tr>
-<tr><td>4-5公里</td><td>600元</td></tr>
-<tr><td>5-6公里</td><td>750元</td></tr>
-<tr><td>6-7公里</td><td>900元</td></tr>
+<li>2－3公里：滿300元</li>
 
-</table>
+<li>3－4公里：滿450元</li>
+
+<li>4－5公里：滿600元</li>
+
+<li>5－6公里：滿750元</li>
+
+<li>6－7公里：滿900元</li>
+
+</ul>
+
+<br>
+
+<p>
+外送時間：11:00～20:00
+</p>
+
+<br>
+
+<p>
+尖峰時段請提前預約
+</p>
 
 </div>
 
 </section>
 
-<section class="section contact">
+<section class="section">
 
-<h2 class="title">聯絡我們</h2>
+<h2 class="title">
+熱門菜單
+</h2>
 
-<p>📍 南投縣草屯鎮虎山路832號</p>
+<div class="menu">
 
-<p>📞 0909-605-985</p>
+<img src="https://i.imgur.com/PJ8Rr0m.jpeg">
 
-<p>🕚 11:00 - 20:00</p>
+<img src="https://i.imgur.com/TqD0I6z.jpeg">
+
+</div>
 
 </section>
 
-<a class="float-btn line-float"
-href="https://lin.ee/JXSBwrM">
+<footer>
+
+<h3>米福壽司專門店</h3>
+
+<br>
+
+<p>南投縣草屯鎮虎山路832號</p>
+
+<p>0909-605985</p>
+
+<p>營業時間 11:00 - 20:00</p>
+
+</footer>
+
+<div class="float">
+
+<a
+class="float-line"
+href="https://lin.ee/JXSBwrM"
+target="_blank">
 LINE點餐
 </a>
 
-<a class="float-btn food-float"
-href="https://foodpanda.go.link/5HXWc">
+<a
+class="float-panda"
+href="https://foodpanda.go.link/5HXWc"
+target="_blank">
 Foodpanda
 </a>
 
-<footer>
-
-© 2026 米福壽司專門店
-
-</footer>
+</div>
 
 </body>
 </html>
